@@ -1,7 +1,6 @@
 //CENTRAL INTERFACE FOR THE BANKING SYSTEM
 
-interface CentralSystem {
-    String customerID();
+public interface CentralSystem {
     String bankName();
     String accountHolderInfo();
     long accountNumber();
