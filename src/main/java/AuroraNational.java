@@ -1,6 +1,6 @@
 public class  AuroraNational implements CentralSystem {
 
-    public String customerID() {
+    private String customerID() {
         // Implementation for returning the customer ID
         return "Customer ID";
     }
@@ -48,5 +48,6 @@ public class  AuroraNational implements CentralSystem {
         // Implementation for searching an account by account number
         return 0; // Placeholder return value
     }
+
 }
 

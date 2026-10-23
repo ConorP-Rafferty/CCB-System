@@ -1,17 +1,27 @@
 package org.example;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-public class Main {
-    static void main() {
-        //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-        // to see how IntelliJ IDEA suggests fixing it.
-        IO.println(String.format("Hello and welcome!"));
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.SQLException;
 
-        for (int i = 1; i <= 5; i++) {
-            //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-            // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-            IO.println("i = " + i);
+public class Main {
+    public static void main(String[] args) {
+    //Implementing multiple database connections
+        String[] dbNames = {"ANB-Database", "MTB-Database", "SCB-Database"};
+
+        for (String dbName : dbNames) {
+            String url = "jdbc:sqlserver://localhost\\SQLDEV;"
+                    + "databaseName=" + dbName + ";"
+                    + "integratedSecurity=true;"
+                    + "encrypt=true;"
+                    + "trustServerCertificate=true;";
+            try (Connection conn = DriverManager.getConnection(url)) {
+                System.out.println("Connected to: " + dbName + " Successfully");
+            } catch (SQLException e) {
+                System.err.println("Failed to connect to: " + dbName);
+                //Gets error message:
+                System.err.println(e.getMessage());
+            }
         }
     }
 }
