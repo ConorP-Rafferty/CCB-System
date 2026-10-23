@@ -16,10 +16,11 @@ public class Main {
                     + "encrypt=true;"
                     + "trustServerCertificate=true;";
             try (Connection conn = DriverManager.getConnection(url)) {
-                System.out.println("Connected to: " + dbName + "Successfully");
+                System.out.println("Connected to: " + dbName + " Successfully");
             } catch (SQLException e) {
-                System.out.println("Failed to connect to: " + dbName);
-                e.printStackTrace();
+                System.err.println("Failed to connect to: " + dbName);
+                //Gets error message:
+                System.err.println(e.getMessage());
             }
         }
     }
