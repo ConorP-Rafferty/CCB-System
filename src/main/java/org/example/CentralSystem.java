@@ -1,4 +1,4 @@
-//CENTRAL INTERFACE FOR THE BANKING SYSTEM
+package org.example;//CENTRAL INTERFACE FOR THE BANKING SYSTEM
 
 public interface CentralSystem {
     String bankName();

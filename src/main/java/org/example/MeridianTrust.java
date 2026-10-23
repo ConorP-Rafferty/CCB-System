@@ -1,4 +1,13 @@
-public class SummitCapital implements CentralSystem {
+package org.example;
+import java.sql.Connection;
+
+public class MeridianTrust implements CentralSystem {
+
+    private Connection MTBConnector;
+    public MeridianTrust(Connection MTBConnector) {
+        this.MTBConnector = MTBConnector;
+    }
+
     public String customerID() {
         // Implementation for returning the customer ID
         return "Customer ID";
@@ -11,7 +20,7 @@ public class SummitCapital implements CentralSystem {
 
     public String accountHolderInfo() {
         // Implementation for displaying account holder information
-        //Name, Address, Phone Number, Email
+        //Name, Address, Email
         return "Account Holder Information";
     }
 

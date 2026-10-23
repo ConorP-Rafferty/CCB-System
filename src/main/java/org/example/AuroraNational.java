@@ -1,5 +1,14 @@
-public class MeridianTrust implements CentralSystem{
-    public String customerID() {
+package org.example;
+import java.sql.Connection;
+
+public class  AuroraNational implements CentralSystem {
+
+    private Connection ANBConnector;
+    public AuroraNational(Connection ANBConnector) {
+        this.ANBConnector = ANBConnector;
+    }
+
+    private String customerID() {
         // Implementation for returning the customer ID
         return "Customer ID";
     }
@@ -27,11 +36,6 @@ public class MeridianTrust implements CentralSystem{
         return 0; // Placeholder return value
     }
 
-    public String cardType() {
-        // Implementation for returning the card type
-        return "Card Type";
-    }
-
     public void deposit(long amount) {
         // Implementation for depositing an amount
     }
@@ -52,4 +56,6 @@ public class MeridianTrust implements CentralSystem{
         // Implementation for searching an account by account number
         return 0; // Placeholder return value
     }
+
 }
+

@@ -1,6 +1,13 @@
-public class  AuroraNational implements CentralSystem {
+package org.example;
+import java.sql.Connection;
 
-    private String customerID() {
+public class SummitCapital implements CentralSystem {
+
+    private Connection SCBConnector;
+    public SummitCapital(Connection SCBConnector) {
+        this.SCBConnector = SCBConnector;
+    }
+    public String customerID() {
         // Implementation for returning the customer ID
         return "Customer ID";
     }
@@ -12,7 +19,7 @@ public class  AuroraNational implements CentralSystem {
 
     public String accountHolderInfo() {
         // Implementation for displaying account holder information
-        //Name, Address, Email
+        //Name, Address, Phone Number, Email
         return "Account Holder Information";
     }
 
@@ -26,6 +33,11 @@ public class  AuroraNational implements CentralSystem {
 
         //Balance
         return 0; // Placeholder return value
+    }
+
+    public String cardType() {
+        // Implementation for returning the card type
+        return "Card Type";
     }
 
     public void deposit(long amount) {
@@ -48,6 +60,4 @@ public class  AuroraNational implements CentralSystem {
         // Implementation for searching an account by account number
         return 0; // Placeholder return value
     }
-
 }
-
